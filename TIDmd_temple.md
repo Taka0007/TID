@@ -36,5 +36,5 @@
 ## Todo
 - 
 
-## Today's song
+## 今日の1曲
 - 
