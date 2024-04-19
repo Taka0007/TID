@@ -20,9 +20,11 @@ jobs:
         run: |
           YEAR=$(date +'%Y')
           FOLDER=$(date +'%Y_%m')
+          TODAY=$(date +'%Y/%m/%d')
           FILENAME=$(date +'%Y%m%d').md
           mkdir -p ${{ github.workspace }}/$YEAR/$FOLDER
           cp TIDmd_temple.md ${{ github.workspace }}/$YEAR/$FOLDER/$FILENAME
+          sed -i "s/YYYY\/MM\/DD/$TODAY/" ${{ github.workspace }}/$YEAR/$FOLDER/$FILENAME
       
       - name: Push to repository
         run: |
