@@ -2,15 +2,16 @@ name: Create Daily Markdown File
 
 on:
   schedule:
-    - cron: '1 15 * * *' # UTCで15時 (日本時間で24時)
+    - cron: '1 15 * * *' # UTCで15時1分 (日本時間で24時1分)
   workflow_dispatch:
+
 jobs:
   create_markdown:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -18,18 +19,18 @@ jobs:
 
       - name: Create Markdown File
         run: |
-          YEAR=$(date +'%Y')
-          FOLDER=$(date +'%Y_%m')
-          TODAY=$(date +'%Y/%m/%d')
-          FILENAME=$(date +'%Y%m%d').md
+          YEAR=$(date -d "+9 hours" +'%Y')  # UTCをJSTに変換してから年を取得
+          FOLDER=$(date -d "+9 hours" +'%Y_%m')  # UTCをJSTに変換してから年_月を取得
+          TODAY=$(date -d "+9 hours" +'%Y/%m/%d')  # UTCをJSTに変換してから日付を取得
+          FILENAME=$(date -d "+9 hours" +'%Y%m%d').md  # UTCをJSTに変換してからファイル名を取得
           mkdir -p ${{ github.workspace }}/$YEAR/$FOLDER
           cp TIDmd_temple.md ${{ github.workspace }}/$YEAR/$FOLDER/$FILENAME
           sed -i "s|YYYY/MM/DD|$TODAY|" ${{ github.workspace }}/$YEAR/$FOLDER/$FILENAME
-      
+
       - name: Push to repository
         run: |
           git config --local user.email "7takacode@gmail.com"
           git config --local user.name "Taka0007"
           git add .
-          git commit -m "Create daily markdown file for $(date +'%Y%m%d')"
+          git commit -m "Create daily markdown file for $(date -d "+9 hours" +'%Y%m%d')"
           git push
