@@ -2,8 +2,8 @@ name: Create Daily Markdown File
 
 on:
   schedule:
-    - cron: '0 15 * * *' # UTCで15時 (日本時間で24時)
-
+    - cron: '1 15 * * *' # UTCで15時 (日本時間で24時)
+  workflow_dispatch:
 jobs:
   create_markdown:
     runs-on: ubuntu-latest
