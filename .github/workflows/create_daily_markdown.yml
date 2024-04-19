@@ -18,10 +18,11 @@ jobs:
 
       - name: Create Markdown File
         run: |
+          YEAR=$(date +'%Y')
           FOLDER=$(date +'%Y_%m')
           FILENAME=$(date +'%Y_%m_%d').md
-          mkdir -p ${{ github.workspace }}/$FOLDER
-          cp TIDmd_temple.md ${{ github.workspace }}/$FOLDER/$FILENAME
+          mkdir -p ${{ github.workspace }}/$YEAR/$FOLDER
+          cp TIDmd_temple.md ${{ github.workspace }}/$YEAR/$FOLDER/$FILENAME
       
       - name: Push to repository
         run: |
