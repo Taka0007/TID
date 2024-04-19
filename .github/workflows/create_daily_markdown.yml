@@ -1,0 +1,32 @@
+name: Create Daily Markdown File
+
+on:
+  schedule:
+    - cron: '0 15 * * *' # UTCで15時 (日本時間で24時)
+
+jobs:
+  create_markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Create Markdown File
+        run: |
+          FOLDER=$(date +'%Y_%m')
+          FILENAME=$(date +'%Y_%m_%d').md
+          mkdir -p ${{ github.workspace }}/$FOLDER
+          cp path/to/your/template.md ${{ github.workspace }}/$FOLDER/$FILENAME
+      
+      - name: Push to repository
+        run: |
+          git config --local user.email "you@example.com"
+          git config --local user.name "Your Name"
+          git add .
+          git commit -m "Add daily markdown file for $(date +'%Y_%m_%d')"
+          git push
