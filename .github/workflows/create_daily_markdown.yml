@@ -21,12 +21,12 @@ jobs:
           FOLDER=$(date +'%Y_%m')
           FILENAME=$(date +'%Y_%m_%d').md
           mkdir -p ${{ github.workspace }}/$FOLDER
-          cp path/to/your/template.md ${{ github.workspace }}/$FOLDER/$FILENAME
+          cp TIDmd_temple.md ${{ github.workspace }}/$FOLDER/$FILENAME
       
       - name: Push to repository
         run: |
-          git config --local user.email "you@example.com"
-          git config --local user.name "Your Name"
+          git config --local user.email "7takacode@gmail.com"
+          git config --local user.name "Taka0007"
           git add .
-          git commit -m "Add daily markdown file for $(date +'%Y_%m_%d')"
+          git commit -m "Create daily markdown file for $(date +'%Y_%m_%d')"
           git push
