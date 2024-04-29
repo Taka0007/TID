@@ -29,8 +29,8 @@ jobs:
 
       - name: Push to repository
         run: |
-          git config --local user.email "7takacode@gmail.com"
-          git config --local user.name "Taka0007"
+          git config --local user.email  ${{ secrets.SECRETUSEREMAIL }}
+          git config --local user.name ${{ secrets.SECRETUSERNAME }}
           git add .
           git commit -m "Create daily markdown file for $(date -d "+9 hours" +'%Y%m%d')"
           git push
