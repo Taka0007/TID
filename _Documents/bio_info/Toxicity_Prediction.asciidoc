@@ -1,0 +1,15 @@
+
+
+== 毒性予測関連の資料まとめ
+ToDo: +
+より詳細に分割を行って可読性を上げる +
+各資料に概要を作成する +
+目次を付ける
+
+https://labo-code.com/bioinformatics/toxicophores-qsar/
+
+https://www.jstage.jst.go.jp/article/ciqs/2018/0/2018_2B07/_pdf/-char/ja
+
+https://zenn.dev/pipon_tech_blog/articles/1bb53e44cb6efa
+
+https://github.com/Mishima-syk/py4chemoinformatics/blob/master/py4c.asciidoc
