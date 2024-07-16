@@ -13,3 +13,5 @@ https://www.jstage.jst.go.jp/article/ciqs/2018/0/2018_2B07/_pdf/-char/ja
 https://zenn.dev/pipon_tech_blog/articles/1bb53e44cb6efa
 
 https://github.com/Mishima-syk/py4chemoinformatics/blob/master/py4c.asciidoc
+
+http://comp-toxicology.com/info/document/2018/FS-10.pdf
