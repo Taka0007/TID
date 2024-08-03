@@ -9,19 +9,6 @@
 ## Do
 - 
 
-
-<!--
-## Reflections & Insights
-- 
-- 
--->
-
-<!--
-## Plans for Tomorrow
-- 
-- 
--->
-
 ## References
 - [R1] 
 - [R2] 
