@@ -1,10 +1,4 @@
 # TID - YYYY/MM/DD
-<!--
-## Learnings
-- 
-- 
--->
-
 
 ## Do
 - 
